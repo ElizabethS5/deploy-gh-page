@@ -1,4 +1,5 @@
 import React from "react";
+import "./Instructions.css";
 // import Instructions2 from "../instructions2/Instructions2";
 
 function Instructions(props) {
