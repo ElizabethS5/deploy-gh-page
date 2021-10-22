@@ -2,22 +2,24 @@ import React from "react";
 import "./Instructions.css";
 import Instructions2 from "../instructions2/Instructions2";
 
-function Instructions(props) {
+function Instructions({ ghname, repo, manager }) {
   return (
     <div>
       <h2>Setup</h2>
       <p>In the terminal:</p>
-      <pre>npm install gh-pages --save-dev</pre>
+      <pre>
+        {manager === "yarn" ? "yarn add" : "npm install"} gh-pages --save-dev
+      </pre>
 
       <p>In package.json JSON object, add:</p>
       <pre>
-        "homepage": "http://{props.name}.github.io/
-        {props.repo}"
+        "homepage": "http://{ghname}.github.io/
+        {repo}"
       </pre>
 
       <p>In package.json "scripts", add:</p>
       <pre>
-        "predeploy": "npm run build",
+        "predeploy": "{manager} run build",
         <br />
         "deploy": "gh-pages -d build"
       </pre>
@@ -25,8 +27,8 @@ function Instructions(props) {
       <h2>Deployment</h2>
       <p>Add, commit, and push changes to your GitHub repository</p>
       <p>In the terminal:</p>
-      <pre>npm run deploy</pre>
-      <Instructions2 repo={props.repo} />
+      <pre>{manager} run deploy</pre>
+      <Instructions2 repo={repo} />
     </div>
   );
 }

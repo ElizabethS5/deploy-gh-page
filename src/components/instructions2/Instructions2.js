@@ -1,7 +1,7 @@
 import React from "react";
 
-function Instructions2(props) {
-  let openingTag = '<BrowserRouter basename="/' + props.repo + '" >';
+function Instructions2({ repo }) {
+  let openingTag = '<BrowserRouter basename="/' + repo + '" >';
   let app = "<App />";
   let closingTag = "</BrowserRouter>";
   return (
