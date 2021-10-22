@@ -21,8 +21,6 @@ function App(props) {
     setFormData(newFormData);
   };
 
-  const selectManager = (event) => {};
-
   return (
     <div className="App">
       <h1>Make a GitHub Page for Create-React-App</h1>
